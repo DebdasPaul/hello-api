@@ -6,12 +6,8 @@ app = FastAPI()
 
 
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-@app.get("/hello-api")
-def hello(param):   
-    """A simple function that return "Hello {param}!
+async def root(param):
+     """A simple function that return "Hello {param}!
      
     Parameters
         ----------
