@@ -9,6 +9,17 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/hello-api")
+def hello(param):   
+    """A simple function that return "Hello {param}!
+     
+    Parameters
+        ----------
+    param : string|float|integer     
+    
+    """
+    
+    if len(param)==0:       
+        return ("No parameter value is specified!")
+    else:
+        return {f"Hello {param}!"}
